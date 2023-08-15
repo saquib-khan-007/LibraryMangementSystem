@@ -5,7 +5,7 @@ public class Main{
 
         IBookService bookService = new BookService();
     do{
-        System.out.println("*******************Library Management System**********************");
+        System.out.println("\n\n *******************Library Management System**********************");
         System.out.println("Press 1 to Add Book");
         System.out.println("Press 2 to ShowAll Books");
         System.out.println("Press 3 to ShowAvailable books");
@@ -36,6 +36,11 @@ public class Main{
         case 4:
         {
             bookService.BorrowBooks();
+            break;
+        }
+        case 5:
+        {
+            bookService.returnBook();
             break;
         }
         case 6:
