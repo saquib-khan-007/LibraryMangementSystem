@@ -74,7 +74,7 @@ public class BookService implements IBookService {
         id = sc.nextLine();
         if (booklist.size() > 0) {
             for (Books books : booklist) {
-                if (books.getId() == id && books.getStatus() == "Available") {
+                if (books.getId().equals(id) && books.getStatus().equals("Available")) {
                     System.out.println("Book Borrowed Successfully");
                     books.setStatus("Not Available");
                     System.out.println("Borrowed Book Details: "+books);
@@ -91,6 +91,7 @@ public class BookService implements IBookService {
 
     }
 
+    @Override
     public void returnBook()
     {
         String Id;
@@ -98,7 +99,7 @@ public class BookService implements IBookService {
         Id = sc.nextLine();
         for(Books books:booklist)
         {
-            if(books.getId()==Id&&books.getStatus()=="Not Available")
+            if(books.getId().equals(Id)&&books.getStatus().equals("Not Available"))
             {
                 books.setStatus("Available");
                 System.out.println("Book Returned Successfully!!");
